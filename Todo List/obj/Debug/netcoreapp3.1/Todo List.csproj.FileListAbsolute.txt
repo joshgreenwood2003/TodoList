@@ -1,0 +1,13 @@
+C:\Users\graha\Desktop\Louis work\Todo List\Todo List\bin\Debug\netcoreapp3.1\Todo List.exe
+C:\Users\graha\Desktop\Louis work\Todo List\Todo List\bin\Debug\netcoreapp3.1\Todo List.deps.json
+C:\Users\graha\Desktop\Louis work\Todo List\Todo List\bin\Debug\netcoreapp3.1\Todo List.runtimeconfig.json
+C:\Users\graha\Desktop\Louis work\Todo List\Todo List\bin\Debug\netcoreapp3.1\Todo List.runtimeconfig.dev.json
+C:\Users\graha\Desktop\Louis work\Todo List\Todo List\bin\Debug\netcoreapp3.1\Todo List.dll
+C:\Users\graha\Desktop\Louis work\Todo List\Todo List\bin\Debug\netcoreapp3.1\Todo List.pdb
+C:\Users\graha\Desktop\Louis work\Todo List\Todo List\obj\Debug\netcoreapp3.1\Todo List.csproj.AssemblyReference.cache
+C:\Users\graha\Desktop\Louis work\Todo List\Todo List\obj\Debug\netcoreapp3.1\Todo List.AssemblyInfoInputs.cache
+C:\Users\graha\Desktop\Louis work\Todo List\Todo List\obj\Debug\netcoreapp3.1\Todo List.AssemblyInfo.cs
+C:\Users\graha\Desktop\Louis work\Todo List\Todo List\obj\Debug\netcoreapp3.1\Todo List.csproj.CoreCompileInputs.cache
+C:\Users\graha\Desktop\Louis work\Todo List\Todo List\obj\Debug\netcoreapp3.1\Todo List.dll
+C:\Users\graha\Desktop\Louis work\Todo List\Todo List\obj\Debug\netcoreapp3.1\Todo List.pdb
+C:\Users\graha\Desktop\Louis work\Todo List\Todo List\obj\Debug\netcoreapp3.1\Todo List.genruntimeconfig.cache
