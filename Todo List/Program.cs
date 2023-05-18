@@ -6,19 +6,14 @@ namespace Todo_List
     {
 
         //Todo list:
-        // -Add something to list
-        // -Take something off list
-        // View the list
-
         //savelist
-        //add element to list
-        //remove element from list
-        const int MAX_SIZE = 3;
+
+        const int MAX_SIZE = 10;
         private string[] arr = new string[MAX_SIZE];
 
         private int lastElement = -1;
         
-        public List(string filename){
+        public List(){
         
         }
 
@@ -32,7 +27,7 @@ namespace Todo_List
             lastElement++;
             return true;
         }
-        public bool removeFromList(int item)
+        public bool removeFromList(int item)     
         {
             if (isEmpty())
             {
@@ -50,6 +45,7 @@ namespace Todo_List
             for (int i = item+1;i<=lastElement ;i++)
             {
                 arr[i - 1] = arr[i];
+                arr[i] = null;
             }
             lastElement--;
             return true;
@@ -76,7 +72,7 @@ namespace Todo_List
             {
                 for (int i =0;i<=lastElement;i++)
                 {
-                    Console.WriteLine(arr[i]);
+                    Console.WriteLine((i+1).ToString() + ": " + arr[i]);
                 }
             }
         }
@@ -88,43 +84,57 @@ namespace Todo_List
     {
         static void Main(string[] args)
         {
-            List list = new List("list.txt");
+            List[] lists= new List[50];
+            for(int i = 0; i< 50; i++)
+            {
+                lists[i] = new List();
+            }
+
+
             string menuInput;
+            int listNumber = 0;
             while (true)
             {
-                Console.WriteLine("Here is the list:");
-                list.viewList();
+                Console.WriteLine("Here is list "+ (listNumber+1).ToString() + ":");
+                lists[listNumber].viewList();
                 Console.WriteLine();
                 Console.WriteLine("Options:");
                 Console.WriteLine("Press 1 to add to the list");
                 Console.WriteLine("Press 2 to remove from the list");
+                Console.WriteLine("Press 3 to change list");
                 menuInput = Console.ReadLine();
-                if(menuInput == "1")
+                if (menuInput == "1")
                 {
                     Console.WriteLine("What would you like to add?");
-                    list.addToList(Console.ReadLine());
+                    lists[listNumber].addToList(Console.ReadLine());
                 }
-                else if(menuInput == "2")
+                else if (menuInput == "2")
                 {
                     Console.WriteLine("Which line would you like to remove?");
-                    list.removeFromList(Convert.ToInt32(Console.ReadLine()));
+                    lists[listNumber].removeFromList(Convert.ToInt32(Console.ReadLine()) - 1);
+                }
+                else if (menuInput == "3")
+                {
+                    Console.WriteLine("Which list would you like to select?");
+                    menuInput = Console.ReadLine();
+                    var isNumeric = int.TryParse(menuInput, out int n);
+                    if (isNumeric && n <= 50 && n>=1)
+                    {
+                        listNumber = n-1;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid list option. Press any key to continue");
+                        Console.ReadKey();
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Invalid selection option. Press any key to continue");
+                    Console.ReadKey();
                 }
                 Console.Clear();
             }
-
-
-
-            Console.WriteLine("DISPLAYING LIST:::::::::::");
-            list.viewList();
-            list.addToList("Hello");
-            list.addToList("World!");
-            list.addToList("World2!");
-            Console.WriteLine("DISPLAYING LIST:::::::::::");
-            list.viewList();
-            list.removeFromList(0);
-            Console.WriteLine("DISPLAYING LIST:::::::::::");
-            list.viewList();
-            Console.ReadLine();
         }
     }
 }
