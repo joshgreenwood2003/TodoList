@@ -2,92 +2,16 @@
 
 namespace Todo_List
 {
-    class List
-    {
+   
 
-        //Todo list:
-        //savelist
-
-        const int MAX_SIZE = 10;
-        private string[] arr = new string[MAX_SIZE];
-
-        private int lastElement = -1;
-        
-        public List(){
-        
-        }
-
-        public bool addToList(string item)
-        {
-            if (isFull())
-            {
-                return false;
-            }
-            arr[lastElement + 1] = item;
-            lastElement++;
-            return true;
-        }
-        public bool removeFromList(int item)     
-        {
-            if (isEmpty())
-            {
-                return false;
-            }
-            if(item >= MAX_SIZE || item <= -1)
-            {
-                return false;
-            }
-            if(arr[item] == null)
-            {
-                return false;
-            }
-            arr[item] = null;
-            for (int i = item+1;i<=lastElement ;i++)
-            {
-                arr[i - 1] = arr[i];
-                arr[i] = null;
-            }
-            lastElement--;
-            return true;
-        }
-        public bool isFull()
-        {
-            if (lastElement >= MAX_SIZE-1)
-            {
-                return true;
-            }
-            return false;
-        }
-        private bool isEmpty()
-        {
-            return (lastElement < 0);
-        }
-        public void viewList()
-        {
-            if (isEmpty())
-            {
-                Console.WriteLine("The list is empty");
-            }
-            else
-            {
-                for (int i =0;i<=lastElement;i++)
-                {
-                    Console.WriteLine((i+1).ToString() + ": " + arr[i]);
-                }
-            }
-        }
-
-
-
-    }
     class Program
     {
         static void Main(string[] args)
         {
-            List[] lists= new List[50];
-            for(int i = 0; i< 50; i++)
+            List<string>[] lists= new List<string>[10];
+            for(int i = 0; i< 10; i++)
             {
-                lists[i] = new List();
+                lists[i] = new List<string>();
             }
 
 
