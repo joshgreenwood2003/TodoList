@@ -86,7 +86,17 @@ namespace Todo_List
             }
         }
 
-
+        public T viewItem(int item)
+        {
+            if (item >= 0 && item <= Size()-1)
+            {
+                return arr[item];
+            }
+            else
+            {
+                return default(T);
+            }
+        }
 
     }
 }

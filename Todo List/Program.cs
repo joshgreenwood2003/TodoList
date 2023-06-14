@@ -8,19 +8,14 @@ namespace Todo_List
     {
         static void Main(string[] args)
         {
-            List<string>[] lists= new List<string>[10];
-            for(int i = 0; i< 10; i++)
-            {
-                lists[i] = new List<string>();
-            }
-
+            List<List<string>> lists = new List<List<string>>();
 
             string menuInput;
             int listNumber = 0;
             while (true)
             {
                 Console.WriteLine("Here is list "+ (listNumber+1).ToString() + ":");
-                lists[listNumber].viewList();
+                lists.viewItem(listNumber).viewList();
                 Console.WriteLine();
                 Console.WriteLine("Options:");
                 Console.WriteLine("Press 1 to add to the list");
@@ -30,12 +25,12 @@ namespace Todo_List
                 if (menuInput == "1")
                 {
                     Console.WriteLine("What would you like to add?");
-                    lists[listNumber].addToList(Console.ReadLine());
+                    lists.viewItem(listNumber).addToList(Console.ReadLine());
                 }
                 else if (menuInput == "2")
                 {
                     Console.WriteLine("Which line would you like to remove?");
-                    lists[listNumber].removeFromList(Convert.ToInt32(Console.ReadLine()) - 1);
+                    lists.viewItem(listNumber).removeFromList(Convert.ToInt32(Console.ReadLine()) - 1);
                 }
                 else if (menuInput == "3")
                 {
