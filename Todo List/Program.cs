@@ -9,7 +9,11 @@ namespace Todo_List
         static void Main(string[] args)
         {
             List<List<string>> lists = new List<List<string>>();
-
+            lists.addToList(new List<string>("Test list 1"));
+            lists.addToList(new List<string>("Test list 2"));
+            lists.addToList(new List<string>("Another list"));
+            lists.addToList(new List<string>("Yet another"));
+            lists.addToList(new List<string>("Final list"));
             string menuInput;
             int listNumber = 0;
             while (true)
@@ -34,6 +38,9 @@ namespace Todo_List
                 }
                 else if (menuInput == "3")
                 {
+                    Console.WriteLine("Here are the lists:");
+                    lists.viewList();
+
                     Console.WriteLine("Which list would you like to select?");
                     menuInput = Console.ReadLine();
                     var isNumeric = int.TryParse(menuInput, out int n);

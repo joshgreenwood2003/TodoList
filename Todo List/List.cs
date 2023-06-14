@@ -8,17 +8,19 @@ namespace Todo_List
     public class List<T>
     {
 
-        //Todo list:
-        //savelist
-
         const int MAX_SIZE = 10;
         private T[] arr = new T[MAX_SIZE];
 
         private int lastElement = -1;
 
+        private string listName = "Unnamed list";
+
         public List()
         {
-
+        }
+        public List(string nameinput)
+        {
+            listName = nameinput;
         }
 
         public int Size()
@@ -96,6 +98,12 @@ namespace Todo_List
             {
                 return default(T);
             }
+        }
+
+
+        public override string ToString()
+        {
+            return listName;
         }
 
     }
